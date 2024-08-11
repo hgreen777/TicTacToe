@@ -2,7 +2,7 @@
 Imports System.Numerics
 
 Public Class GameBoard
-    Dim settings_store() As String
+    Dim settings_store As String() = {"0", "0", "0"}
 
     Dim go As Integer = 1
     Dim won As Integer = 0
@@ -452,7 +452,7 @@ Public Class GameBoard
             go = 5
             won = 2
 
-            If settings_store(0) = "1" Then
+            If settings_store(1) = "1" Then
                 My.Computer.Audio.Play(My.Resources.winloss__1_, AudioPlayMode.Background)
             End If
 
@@ -621,7 +621,7 @@ Public Class GameBoard
         MsgBox(owins)
     End Sub
 
-    Private Sub GameBoard_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+    Public Sub GameBoard_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         settings_store = SettingsHandler.obtain_settingsValues()
     End Sub
 End Class

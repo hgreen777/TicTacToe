@@ -8,6 +8,7 @@ Public Class Settings
         SettingsHandler.save_settingsValues(settings)
 
         GameBoard.Show()
+        GameBoard.GameBoard_Shown(sender, e)
         GameBoard.WinsSetter()
         Me.Hide()
     End Sub
