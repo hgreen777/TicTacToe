@@ -142,9 +142,6 @@
   <data name="turn text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\turn text1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Settings.txt.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="hovered" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hovered1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -222,5 +219,20 @@
   </data>
   <data name="winScore" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\winScore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Check1" xml:space="preserve">
+    <value>1</value>
+    <comment>Background Music</comment>
+  </data>
+  <data name="Check2" xml:space="preserve">
+    <value>0</value>
+    <comment>Sound Effects</comment>
+  </data>
+  <data name="Check3" xml:space="preserve">
+    <value>5</value>
+    <comment>Will update when i find out what this does</comment>
+  </data>
+  <data name="Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

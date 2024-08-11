@@ -5,21 +5,18 @@ Public Class Form1
     Dim running As Boolean = False
     Public Sub BgMusic()
 
-        FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-        Dim musicstg As String = LineInput(1)
+        Dim settings() As String = SettingsHandler.obtain_settingsValues()
 
-        If musicstg = "1" Then
+        If settings(0) = "1" Then
 
-            If running = False Then
+            If Not running Then
                 My.Computer.Audio.Play(My.Resources.mainMenu, AudioPlayMode.BackgroundLoop)
                 running = True
-            ElseIf running = True Then
+            Else
                 My.Computer.Audio.Stop()
                 running = False
             End If
         End If
-        FileClose(1)
-
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -61,7 +58,6 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         BgMusic()
     End Sub
 End Class

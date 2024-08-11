@@ -91,6 +91,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to 1.
+        '''</summary>
+        Friend ReadOnly Property Check1() As String
+            Get
+                Return ResourceManager.GetString("Check1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 0.
+        '''</summary>
+        Friend ReadOnly Property Check2() As String
+            Get
+                Return ResourceManager.GetString("Check2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 5.
+        '''</summary>
+        Friend ReadOnly Property Check3() As String
+            Get
+                Return ResourceManager.GetString("Check3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property draw() As System.Drawing.Bitmap
@@ -298,9 +325,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 0
-        '''0
-        '''5.
+        '''  Looks up a localized string similar to 0,0,5.
         '''</summary>
         Friend ReadOnly Property Settings() As String
             Get

@@ -1,104 +1,56 @@
 ﻿Imports System.IO
 Public Class Settings
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
 
-    End Sub
+    Dim settings() As String
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        ' Save settings and return to main menu
+        SettingsHandler.save_settingsValues(settings)
+
         GameBoard.Show()
         GameBoard.WinsSetter()
         Me.Hide()
     End Sub
 
-    Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-
-
-        'MsgBox(array1(2))
-
-
-    End Sub
-
+    ' Set the background music to on
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         If RadioButton1.Checked = True Then
-            FileOpen(1, "Settings.txt.txt", OpenMode.Output)
-            PrintLine(1, "1")
-            If RadioButton4.Checked = True Then
-                PrintLine(1, "1")
-            Else
-                PrintLine(1, "0")
-            End If
-
-            FileClose(1)
+            settings(0) = "1"
+        Else
+            settings(0) = "0"
         End If
     End Sub
 
-    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
-        If RadioButton2.Checked = True Then
-            FileOpen(1, "Settings.txt.txt", OpenMode.Output)
-            PrintLine(1, "0")
-            If RadioButton4.Checked = True Then
-                PrintLine(1, "1")
-            Else
-                PrintLine(1, "0")
-            End If
-
-            FileClose(1)
-            End If
-    End Sub
-
+    ' Set the sound effects to on
     Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
         If RadioButton4.Checked = True Then
-            FileOpen(1, "Settings.txt.txt", OpenMode.Output)
-
-            If RadioButton1.Checked = True Then
-                PrintLine(1, "1")
-            Else
-                PrintLine(1, "0")
-            End If
-
-            PrintLine(1, "1")
-
-            FileClose(1)
-        End If
-    End Sub
-
-    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
-        If RadioButton3.Checked = True Then
-            FileOpen(1, "Settings.txt.txt", OpenMode.Output)
-            If RadioButton1.Checked = True Then
-                PrintLine(1, "1")
-            Else
-                PrintLine(1, "0")
-            End If
-
-            PrintLine(1, "0")
-
-            FileClose(1)
+            settings(1) = "1"
+        Else
+            settings(1) = "0"
         End If
     End Sub
 
     Public Sub SettingsCheck()
-        FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-        Dim check1 As String = LineInput(1)
-        FileClose(1)
-
-        FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-        LineInput(1)
-        Dim check2 As String = LineInput(1)
-        FileClose(1)
-
-        If check1 = "1" Then
+        ' Preload form with settings
+        ' Check if background music is enabled.
+        If settings(0) = "1" Then
             RadioButton1.Checked = True
         Else
+            ' If not, set the off radio button to checked.
             RadioButton2.Checked = True
         End If
-        If check2 = "1" Then
-            RadioButton4.Checked = True
+        ' Check if sound effects are enabled.
+        If settings(1) = "1" Then
+            RadioButton4.Checked = True 'on
         Else
-            RadioButton3.Checked = True
+            RadioButton3.Checked = True 'off
         End If
+    End Sub
 
+    Private Sub Settings_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        ' on show, check settigns and load screen
+        settings = SettingsHandler.obtain_settingsValues()
+        SettingsCheck()
     End Sub
 End Class

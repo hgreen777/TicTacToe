@@ -2,6 +2,8 @@
 Imports System.Numerics
 
 Public Class GameBoard
+    Dim settings_store() As String
+
     Dim go As Integer = 1
     Dim won As Integer = 0
     Dim gocount As Integer = 0
@@ -44,18 +46,13 @@ Public Class GameBoard
     'ES1 Placing +Hovering
     Private Sub es1_Click(sender As Object, e As EventArgs) Handles es1.Click
         If ran1 = False Then
+            If settings_store(1) = "1" Then
+                My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
+            End If
             If go = 1 Then
                 Me.es1.Image = Global.TicTacToe.My.Resources.Resources.x
                 ran1 = True
                 go = 2
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
 
@@ -65,15 +62,6 @@ Public Class GameBoard
                 Me.es1.Image = Global.TicTacToe.My.Resources.Resources.o
                 ran1 = True
                 go = 1
-
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
                 who1 = 2
@@ -100,18 +88,14 @@ Public Class GameBoard
     'ES2 Placing +Hovering
     Private Sub es2_Click(sender As Object, e As EventArgs) Handles es2.Click
         If ran2 = False Then
+            If settings_store(1) = "1" Then
+                My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
+            End If
+
             If go = 1 Then
                 Me.es2.Image = Global.TicTacToe.My.Resources.Resources.x
                 ran2 = True
                 go = 2
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
 
@@ -121,14 +105,6 @@ Public Class GameBoard
                 Me.es2.Image = Global.TicTacToe.My.Resources.Resources.o
                 ran2 = True
                 go = 1
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
                 who2 = 2
@@ -154,18 +130,15 @@ Public Class GameBoard
     'ES3 Placing +Hovering
     Private Sub es3_Click(sender As Object, e As EventArgs) Handles es3.Click
         If ran3 = False Then
+
+            If settings_store(1) = "1" Then
+                My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
+            End If
+
             If go = 1 Then
                 Me.es3.Image = Global.TicTacToe.My.Resources.Resources.x
                 ran3 = True
                 go = 2
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
 
@@ -175,14 +148,6 @@ Public Class GameBoard
                 Me.es3.Image = Global.TicTacToe.My.Resources.Resources.o
                 ran3 = True
                 go = 1
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
                 who3 = 2
@@ -208,18 +173,13 @@ Public Class GameBoard
     'ES4 Placing +Hovering
     Private Sub es4_Click(sender As Object, e As EventArgs) Handles es4.Click
         If ran4 = False Then
+            If settings_store(1) = "1" Then
+                My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
+            End If
             If go = 1 Then
                 Me.es4.Image = Global.TicTacToe.My.Resources.Resources.x
                 ran4 = True
                 go = 2
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
 
@@ -229,14 +189,6 @@ Public Class GameBoard
                 Me.es4.Image = Global.TicTacToe.My.Resources.Resources.o
                 ran4 = True
                 go = 1
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
                 who4 = 2
@@ -262,18 +214,14 @@ Public Class GameBoard
     'ES5 Placing +Hovering
     Private Sub es5_Click(sender As Object, e As EventArgs) Handles es5.Click
         If ran5 = False Then
+            If settings_store(1) = "1" Then
+                My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
+            End If
+
             If go = 1 Then
                 Me.es5.Image = Global.TicTacToe.My.Resources.Resources.x
                 ran5 = True
                 go = 2
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
 
@@ -283,14 +231,6 @@ Public Class GameBoard
                 Me.es5.Image = Global.TicTacToe.My.Resources.Resources.o
                 ran5 = True
                 go = 1
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
                 who5 = 2
@@ -316,18 +256,14 @@ Public Class GameBoard
     'ES6 Placing +Hovering
     Private Sub es6_Click(sender As Object, e As EventArgs) Handles es6.Click
         If ran6 = False Then
+            If settings_store(1) = "1" Then
+                My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
+            End If
+
             If go = 1 Then
                 Me.es6.Image = Global.TicTacToe.My.Resources.Resources.x
                 ran6 = True
                 go = 2
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
 
@@ -337,14 +273,6 @@ Public Class GameBoard
                 Me.es6.Image = Global.TicTacToe.My.Resources.Resources.o
                 ran6 = True
                 go = 1
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
                 who6 = 2
@@ -370,18 +298,13 @@ Public Class GameBoard
     'ES7 Placing +Hovering
     Private Sub es7_Click(sender As Object, e As EventArgs) Handles es7.Click
         If ran7 = False Then
+            If settings_store(1) = "1" Then
+                My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
+            End If
             If go = 1 Then
                 Me.es7.Image = Global.TicTacToe.My.Resources.Resources.x
                 ran7 = True
                 go = 2
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
 
@@ -391,14 +314,6 @@ Public Class GameBoard
                 Me.es7.Image = Global.TicTacToe.My.Resources.Resources.o
                 ran7 = True
                 go = 1
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
                 who7 = 2
@@ -424,18 +339,13 @@ Public Class GameBoard
     'ES8 Placing +Hovering
     Private Sub es8_Click(sender As Object, e As EventArgs) Handles es8.Click
         If ran8 = False Then
+            If settings_store(1) = "1" Then
+                My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
+            End If
             If go = 1 Then
                 Me.es8.Image = Global.TicTacToe.My.Resources.Resources.x
                 ran8 = True
                 go = 2
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
 
@@ -445,14 +355,6 @@ Public Class GameBoard
                 Me.es8.Image = Global.TicTacToe.My.Resources.Resources.o
                 ran8 = True
                 go = 1
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
                 who8 = 2
@@ -478,18 +380,14 @@ Public Class GameBoard
     'ES9 Placing +Hovering
     Private Sub es9_Click(sender As Object, e As EventArgs) Handles es9.Click
         If ran9 = False Then
+            If settings_store(1) = "1" Then
+                My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
+            End If
+
             If go = 1 Then
                 Me.es9.Image = Global.TicTacToe.My.Resources.Resources.x
                 ran9 = True
                 go = 2
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
 
@@ -499,14 +397,6 @@ Public Class GameBoard
                 Me.es9.Image = Global.TicTacToe.My.Resources.Resources.o
                 ran9 = True
                 go = 1
-
-                FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-                LineInput(1)
-                Dim soundEffectstg As String = LineInput(1)
-                If soundEffectstg = "1" Then
-                    My.Computer.Audio.Play(My.Resources.place, AudioPlayMode.Background)
-                End If
-                FileClose(1)
 
                 turnchanger()
                 who9 = 2
@@ -542,10 +432,7 @@ Public Class GameBoard
             go = 5
             won = 1
 
-            FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-            LineInput(1)
-            Dim soundEffectstg As String = LineInput(1)
-            If soundEffectstg = "1" Then
+            If settings_store(1) = "1" Then
                 My.Computer.Audio.Play(My.Resources.winloss__1_, AudioPlayMode.Background)
             End If
             FileClose(1)
@@ -565,13 +452,9 @@ Public Class GameBoard
             go = 5
             won = 2
 
-            FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-            LineInput(1)
-            Dim soundEffectstg As String = LineInput(1)
-            If soundEffectstg = "1" Then
+            If settings_store(0) = "1" Then
                 My.Computer.Audio.Play(My.Resources.winloss__1_, AudioPlayMode.Background)
             End If
-            FileClose(1)
 
             owins += 1
             Label1.Text = owins
@@ -589,13 +472,9 @@ Public Class GameBoard
             go = 5
             won = 3
 
-            FileOpen(1, "Settings.txt.txt", OpenMode.Input)
-            LineInput(1)
-            Dim soundEffectstg As String = LineInput(1)
-            If soundEffectstg = "1" Then
+            If settings_store(1) = "1" Then
                 My.Computer.Audio.Play(My.Resources.draw__1_, AudioPlayMode.Background)
             End If
-            FileClose(1)
 
             Me.turn.Image = Global.TicTacToe.My.Resources.Resources.turn_text
             blurScreen.Show()
@@ -704,7 +583,6 @@ Public Class GameBoard
     End Sub
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        Settings.SettingsCheck()
         Settings.Show()
 
         Me.Hide()
@@ -741,5 +619,9 @@ Public Class GameBoard
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
         MsgBox(owins)
+    End Sub
+
+    Private Sub GameBoard_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        settings_store = SettingsHandler.obtain_settingsValues()
     End Sub
 End Class
